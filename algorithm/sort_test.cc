@@ -70,7 +70,7 @@ void bsort1(T x[], int n)
   int i,j;
   for (i = 0; i< n; ++i)
   {
-    // move the minimum to left
+     // move the minimum to left
      for (j = n-1; j > i; --j)
      {
       if (x[j-1] > x[j])

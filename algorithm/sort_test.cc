@@ -67,34 +67,34 @@ void isort3(T x[], int n)
 // It works by repeatedly swapping adjacent elements that are out of order.
 void bsort1(T x[], int n)
 {
-	int i,j;
-	for (i = 0; i< n; ++i)
-	{
+  int i,j;
+  for (i = 0; i< n; ++i)
+  {
     // move the minimum to left
-		for (j = n-1; j > i; --j)
-		{
-			if (x[j-1] > x[j])
-			{
-				swap(x[j-1],x[j]);
-			}
-		}
-	}
+     for (j = n-1; j > i; --j)
+     {
+      if (x[j-1] > x[j])
+      {
+        swap(x[j-1],x[j]);
+      }
+     }
+  }
 }
 
 void bsort2(T x[], int n)
 {
   int i, j, k;
-	for(i = n-1; i > 0; i = k)       // 循环到没有比较范围
-	{
-		for(j = 0, k = 0; j < i; ++j)  // 每次预置k=0，循环扫描后更新k
-		{
-			if(x[j] > x[j+1])            // 从小到大增长
-			{
-				swap(x[j+1],x[j]);
-				k = j;                     // 保留最后下沉位置，k后面都排好了序
-			}
-		}
-	}
+  for(i = n-1; i > 0; i = k)       // 循环到没有比较范围
+  {
+    for(j = 0, k = 0; j < i; ++j)  // 每次预置k=0，循环扫描后更新k
+    {
+      if(x[j] > x[j+1])            // 从小到大增长
+      {
+        swap(x[j+1],x[j]);
+        k = j;                     // 保留最后下沉位置，k后面都排好了序
+      }
+    }
+  }
 
 }
 
@@ -102,10 +102,10 @@ void bsort2(T x[], int n)
 // The quicksort 
 void qsort1(T x[], int low, int high)
 {
-	int i, j, base;
+  int i, j, base;
 
-	if( low < high )
-	{
+  if( low < high )
+  {
     i = low;
     j = high;
     base = x[low];                    // low作为基准点
@@ -137,16 +137,16 @@ void qsort1(T x[], int low, int high)
 
     qsort1(x,low, i-1);
     qsort1(x,i+1, high);
-	}
+  }
 
 }
 
 void qsort2(T x[], int low, int high)
 {
-	int i, j, base;
+  int i, j, base;
 
-	if( low < high )
-	{
+  if( low < high )
+  {
     i = low;
     j = high;
     base = x[low];                    // low作为基准点
@@ -180,7 +180,7 @@ void qsort2(T x[], int low, int high)
 
     qsort2(x,low, i-1);
     qsort2(x,i+1, high);
-	}
+  }
 
 }
 

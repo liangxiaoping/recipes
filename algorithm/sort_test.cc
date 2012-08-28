@@ -16,9 +16,9 @@ void printAarray(T x[], int n)
 
 void swap(T &a, T &b)
 {
-	T temp = a;
-	a = b;
-	b = temp;
+  T temp = a;
+  a = b;
+  b = temp;
 }
 
 // Insertion sort
@@ -198,10 +198,10 @@ int main()
   isort1(x1, sizeof(x1)/sizeof(x1[0]));
   printAarray(x1, 8);
 
-  isort1(x2, sizeof(x2)/sizeof(x2[0]));
+  isort2(x2, sizeof(x2)/sizeof(x2[0]));
   printAarray(x2, 8);
 
-  isort1(x3, sizeof(x3)/sizeof(x3[0]));
+  isort3(x3, sizeof(x3)/sizeof(x3[0]));
   printAarray(x3, 8);
   
   bsort1(x4, sizeof(x4)/sizeof(x4[0]));

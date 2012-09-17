@@ -33,8 +33,6 @@ class Mutex : boost::noncopyable
   pthread_mutex_t* getMutex() { return &mutex_; }
 
  private:
-  Mutex(const Mutex&);
-  const Mutex& operator=(const Mutex&);
   pthread_mutex_t mutex_;
 };
 
@@ -46,12 +44,10 @@ class MutexGuard : boost::noncopyable
   ~MutexGuard() { mutex_.unlock(); }
 
  private:
-  MutexGuard(const MutexGuard&);
-  const MutexGuard &operator=(const MutexGuard&);
   Mutex& mutex_;
 };
 
-class Condition
+class Condition : boost::noncopyable
 {
  public:
   explicit Condition(Mutex& mutex) : mutex_(mutex) 
@@ -63,8 +59,6 @@ class Condition
   void notifyAll() {pthread_cond_broadcast(&cond_);}
 
  private:
-  Condition(const Condition&);
-  const Condition& operator=(const Condition&);
   Mutex& mutex_;
   pthread_cond_t cond_;
 };

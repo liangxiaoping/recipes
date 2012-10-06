@@ -27,7 +27,7 @@ void swap(T &a, T &b)
 void isort1(T x[], int n)
 {
   int i,j;
-  for(i = 0; i < n; ++i)
+  for(i = 1; i < n; ++i)
   {
     for(j = i; j > 0 && x[j-1] > x[j]; --j)
     {
@@ -39,7 +39,7 @@ void isort1(T x[], int n)
 void isort2(T x[], int n)
 {
   int i,j;
-  for(i = 0; i < n; ++i)
+  for(i = 1; i < n; ++i)
   {
     for(j = i; j > 0 && x[j-1] > x[j]; --j)
     {
@@ -53,7 +53,7 @@ void isort2(T x[], int n)
 void isort3(T x[], int n)
 {
   int i,j;
-  for(i = 0; i < n; ++i)
+  for(i = 1; i < n; ++i)
   {
     T key = x[i];
     for(j = i; j > 0 && x[j-1] > key; --j)
